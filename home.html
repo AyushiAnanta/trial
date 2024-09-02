@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="imgg">
+            <img src="freepik-export-20240828070517qbX0.png">
+            <img src="Screenshot 2024-08-28 114203.png">
+    
+        </div>
+    </div>
+    
+    <script>
+        
+
+        // Select the image element by its ID or class
+    const imgElement = document.querySelector('img'); // Replace 'img' with your image selector
+
+// Function to adjust the image size based on screen dimensions
+    function adjustImageSize() {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        if (screenWidth < screenHeight) {
+            // Portrait mode: Image width 80% of screen width
+            imgElement.style.width = '70%';
+        } else {
+            // Landscape mode: Image width 40% of screen width
+            imgElement.style.width = '40%';
+        }
+        // Keep the image height equal to its width
+        imgElement.style.height = imgElement.style.width;
+    }
+
+// Call the function initially to set the correct size on page load
+    adjustImageSize();
+
+// Add an event listener to adjust the size on window resize
+    window.addEventListener('resize', adjustImageSize);
+
+        let s=0
+        function redirect() {
+            document.body.classList.add('slide-out');
+            document.body.addEventListener('animationend', function() {
+        
+                window.location.href = "index.html";
+            }, { once: true }); 
+            
+        }
+        setTimeout('redirect()' ,1000);
+    </script>
+</body>
+</html>
